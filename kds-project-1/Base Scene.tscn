@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://pwucg67k0adc"]
+
+[ext_resource type="TileSet" uid="uid://chd654wmf23aa" path="res://Assets/Tilemaps/RPG Urban Kit .tres" id="1_b0qx2"]
+
+[node name="Node2D" type="Node2D" unique_id=1471633050]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1656079928]
+tile_set = ExtResource("1_b0qx2")
