@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://gr4yngnvfrpr"]
+
+[ext_resource type="Script" uid="uid://cmwfobvymvdy8" path="res://Scripts/ant.gd" id="1_3vc7g"]
+[ext_resource type="Texture2D" uid="uid://do4obav7u21j5" path="res://Assets/Tilemaps/ufeff_tiles_v2.png" id="2_4ydk5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ydk5"]
+radius = 6.0
+height = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd48h"]
+atlas = ExtResource("2_4ydk5")
+region = Rect2(80, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wtaqj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd48h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=114337082]
+script = ExtResource("1_3vc7g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173667661]
+shape = SubResource("CapsuleShape2D_4ydk5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2067209756]
+sprite_frames = SubResource("SpriteFrames_wtaqj")
