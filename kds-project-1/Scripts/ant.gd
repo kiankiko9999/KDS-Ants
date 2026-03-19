@@ -35,6 +35,7 @@ func move_to(pos: Vector2):
 	moving = true
 
 func return_to_nest():
+
 	if returning:
 		return
 	target = nest_position

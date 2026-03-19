@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bqbu2wmib8ojy"]
+
+[ext_resource type="Script" uid="uid://bns1ahqkmll3o" path="res://Scripts/ant_controller.gd" id="1_jgng7"]
+[ext_resource type="PackedScene" uid="uid://gr4yngnvfrpr" path="res://Scenes/ant.tscn" id="2_fpjnh"]
+[ext_resource type="Script" uid="uid://7w4faboarsdr" path="res://Scripts/area_2d.gd" id="3_mbg7k"]
+[ext_resource type="Texture2D" uid="uid://bprj5w4xm7d6t" path="res://Assets/Sprites/AntHill.png" id="4_tc12g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ksr6"]
+radius = 31.016125
+
+[node name="AntController" type="Node2D" unique_id=2059625535]
+script = ExtResource("1_jgng7")
+ant_scene = ExtResource("2_fpjnh")
+nest_position = Vector2(232, -30)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1797619927]
+script = ExtResource("3_mbg7k")
+
+[node name="AntHill" type="Sprite2D" parent="Area2D" unique_id=394892775]
+position = Vector2(0, 37)
+texture = ExtResource("4_tc12g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=515510780]
+position = Vector2(1, 36)
+shape = SubResource("CircleShape2D_4ksr6")
