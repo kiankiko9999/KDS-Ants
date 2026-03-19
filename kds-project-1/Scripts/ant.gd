@@ -6,9 +6,15 @@ var speed: float = 120.0
 var target: Vector2 = Vector2.ZERO
 var returning: bool = false
 var moving: bool = false
+@onready var animated_sprite = $AnimatedSprite2D
 
 const ARRIVE_THRESHOLD = 8.0
 
+func _process(delta: float) -> void:
+	if moving:
+		animated_sprite.play("Walking")
+	else:
+		animated_sprite.play("Idle")
 func _physics_process(delta):
 	if not moving:
 		return

@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://gr4yngnvfrpr" path="res://Scenes/ant.tscn" id="4_56e3h"]
 [ext_resource type="Script" uid="uid://7w4faboarsdr" path="res://Scripts/area_2d.gd" id="5_4ksr6"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uc7fm"]
-radius = 32.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ksr6"]
+radius = 31.016125
 
 [node name="Node2D" type="Node2D" unique_id=1471633050]
 
@@ -30,7 +30,7 @@ texture = ExtResource("3_uc7fm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AntController/Area2D" unique_id=1486532636]
 position = Vector2(1, 36)
-shape = SubResource("CircleShape2D_uc7fm")
+shape = SubResource("CircleShape2D_4ksr6")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=392995573]
 position = Vector2(0, -256)

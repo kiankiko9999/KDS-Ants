@@ -4,5 +4,5 @@ func _ready():
 	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body):
-	if body.has_method("return_to_nest") and body.returning:
-		body.arrive_at_nest()
+	#if body.has_method("return_to_nest") and body.returning:
+	body.arrive_at_nest()
