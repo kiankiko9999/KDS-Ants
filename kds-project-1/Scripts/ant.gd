@@ -58,6 +58,8 @@ func check_weight(fruit) -> bool:
 	return fruit.try_attach(self)
 
 func die():
+	if attached_fruit != null:
+		attached_fruit.detatch_ant(self)
 	queue_free()
 func walking_animation():
 	animated_sprite.play("Walking")
