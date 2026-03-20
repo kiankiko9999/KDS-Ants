@@ -6,13 +6,12 @@ var speed: float = 120.0
 var target: Vector2 = Vector2.ZERO
 var returning: bool = false
 var moving: bool = false
-var carrying: bool = false
-var attached_fruit = null
+@export var attached_fruit = null
 
 const ARRIVE_THRESHOLD = 8.0
 
 func _physics_process(delta):
-	if carrying or not moving:
+	if not moving:
 		return
 
 	var direction = (target - global_position)
@@ -31,11 +30,18 @@ func move_to(pos: Vector2):
 	moving = true
 
 func return_to_nest():
-	if returning or carrying:
+	if returning:
 		return
+	if attached_fruit != null:
+		attached_fruit.detach_ant(self)
+	set_collision_layer_value(1, false)
+	set_collision_layer_value(2, false)
+	set_collision_layer_value(3, true)
+	set_collision_layer_value(4, false)
 	target = nest_position
 	returning = true
 	moving = true
+
 
 func arrive_at_nest():
 	moving = false

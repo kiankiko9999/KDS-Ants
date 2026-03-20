@@ -14,6 +14,7 @@ ant_scene = ExtResource("2_fpjnh")
 nest_position = Vector2(232, -30)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1797619927]
+collision_mask = 7
 script = ExtResource("3_mbg7k")
 
 [node name="AntHill" type="Sprite2D" parent="Area2D" unique_id=394892775]
@@ -23,3 +24,6 @@ texture = ExtResource("4_tc12g")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=515510780]
 position = Vector2(1, 36)
 shape = SubResource("CircleShape2D_4ksr6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

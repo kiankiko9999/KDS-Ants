@@ -43,3 +43,7 @@ func _recall_ants_near(click_pos: Vector2):
 func ant_returned():
 	ants_in_nest += 1
 	print("Ant returned! Ants in nest: ", ants_in_nest)
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

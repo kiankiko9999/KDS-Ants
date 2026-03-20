@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://chd654wmf23aa" path="res://Assets/Tilemaps/RPG Urban Kit .tres" id="1_yga4i"]
 [ext_resource type="PackedScene" uid="uid://bqbu2wmib8ojy" path="res://Scenes/ant_controller.tscn" id="2_ufl4h"]
 [ext_resource type="PackedScene" uid="uid://cgvx8mcv84tpc" path="res://Scenes/Apple.tscn" id="3_58y5n"]
+[ext_resource type="PackedScene" uid="uid://bjix1gw2dbw4n" path="res://Scenes/Blueberry.tscn" id="4_yga4i"]
 
 [node name="Node2D" type="Node2D" unique_id=1471633050]
 
@@ -20,3 +21,7 @@ position = Vector2(232, -70)
 
 [node name="Area2D" parent="." unique_id=584575149 instance=ExtResource("3_58y5n")]
 position = Vector2(208, -157)
+
+[node name="Area2D2" parent="." unique_id=377399375 instance=ExtResource("4_yga4i")]
+position = Vector2(312, -162)
+weight = 3
