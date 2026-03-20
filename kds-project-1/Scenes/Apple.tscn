@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cgvx8mcv84tpc"]
+
+[ext_resource type="Script" uid="uid://b72221n5063w" path="res://Scripts/Fruit.gd" id="1_cvq6o"]
+[ext_resource type="Texture2D" uid="uid://8lt21xenln1d" path="res://Assets/Sprites/Applecore.png" id="2_wkrbd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usam7"]
+size = Vector2(24, 32)
+
+[node name="Area2D" type="Area2D" unique_id=584575149]
+script = ExtResource("1_cvq6o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1066962747]
+shape = SubResource("RectangleShape2D_usam7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=58679826]
+texture = ExtResource("2_wkrbd")
