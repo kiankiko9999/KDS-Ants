@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dm8bsrwaa6eof"]
 
 [ext_resource type="Texture2D" uid="uid://dmjpybvyya63x" path="res://Assets/Sprites/Animations/Basicshoewarning.png" id="1_lg8rc"]
-[ext_resource type="Script" path="res://Scripts/ShoeWarning.tscn.gd" id="2_1qucn"]
+[ext_resource type="Script" uid="uid://dha5oukbuuy74" path="res://Scripts/ShoeWarning.tscn.gd" id="2_1qucn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rguy1"]
 atlas = ExtResource("1_lg8rc")
