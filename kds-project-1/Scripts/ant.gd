@@ -7,13 +7,15 @@ var target: Vector2 = Vector2.ZERO
 var returning: bool = false
 var moving: bool = false
 @export var attached_fruit = null
-
+@onready var animated_sprite = $AnimatedSprite2D
 const ARRIVE_THRESHOLD = 8.0
 
 func _physics_process(delta):
 	if not moving:
+		if attached_fruit == null:
+			animated_sprite.play("Idle")
 		return
-
+	animated_sprite.play("Walking")
 	var direction = (target - global_position)
 	if direction.length() < ARRIVE_THRESHOLD:
 		global_position = target
@@ -50,14 +52,12 @@ func arrive_at_nest():
 	queue_free()
 
 func check_weight(fruit) -> bool:
-	if fruit.weight < 0:
-		queue_free()
-		return false
-
 	if fruit.weight == 0:
 		return false
-
+	animated_sprite.play("Idle")
 	return fruit.try_attach(self)
 
 func die():
 	queue_free()
+func walking_animation():
+	animated_sprite.play("Walking")
