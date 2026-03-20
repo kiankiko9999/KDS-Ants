@@ -84,6 +84,7 @@ func _start_moving():
 		controller = attached_ants[0].controller
 		nest_target = attached_ants[0].nest_position
 
+
 func deliver():
 	if controller:
 		controller.ants_in_nest += ants_to_spawn
