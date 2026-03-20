@@ -10,7 +10,7 @@ var nest_target: Vector2 = Vector2.ZERO
 var controller = null
 
 func _ready():
-	body_entered.connect(_on_body_entered)
+	#body_entered.connect(_on_body_entered)
 	attached_ants.resize(weight)
 	attached_ants.fill(null)
 	size = weight

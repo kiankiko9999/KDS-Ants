@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bqbu2wmib8ojy" path="res://Scenes/ant_controller.tscn" id="2_ufl4h"]
 [ext_resource type="PackedScene" uid="uid://cgvx8mcv84tpc" path="res://Scenes/Apple.tscn" id="3_58y5n"]
 [ext_resource type="PackedScene" uid="uid://bjix1gw2dbw4n" path="res://Scenes/Blueberry.tscn" id="4_yga4i"]
+[ext_resource type="PackedScene" uid="uid://bqerntbco17af" path="res://Scenes/ShoeWarning.tscn" id="5_4ksr6"]
 
 [node name="Node2D" type="Node2D" unique_id=1471633050]
 
@@ -24,4 +25,6 @@ position = Vector2(208, -157)
 
 [node name="Area2D2" parent="." unique_id=377399375 instance=ExtResource("4_yga4i")]
 position = Vector2(312, -162)
-weight = 3
+
+[node name="AnimatedSprite2D" parent="." unique_id=926569429 instance=ExtResource("5_4ksr6")]
+position = Vector2(217, -126)
