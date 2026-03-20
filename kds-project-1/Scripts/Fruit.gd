@@ -10,7 +10,6 @@ var nest_target: Vector2 = Vector2.ZERO
 var controller = null
 
 func _ready():
-	body_entered.connect(_on_body_entered)
 	attached_ants.resize(weight)
 	attached_ants.fill(null)
 	size = weight
@@ -54,35 +53,18 @@ func try_attach(ant) -> bool:
 	if weight <= 0:
 		_start_moving()
 	return true
-#func try_attach(ant) -> bool:
-	#if weight <= 0:
-		#return false
-#
-	#var slot = _get_slot_position(attached_ants.size())
-	#attached_ants.append(ant)
-	#weight -= 1
-#
-	#ant.global_position = slot
-	#ant.rotation = (global_position - ant.global_position).angle() + PI / 2
-	#ant.moving = false
-	#ant.attached_fruit = self
-	#ant.set_collision_layer_value(1, false)
-	#ant.set_collision_layer_value(4, true)
-#
-	#if weight <= 0:
-		#_start_moving()
-#
-	#return true
-
 func _get_slot_position(index: int) -> Vector2:
 	var angle = (TAU / size) * index
 	return global_position + Vector2(cos(angle), sin(angle)) * attach_radius
 
 func _start_moving():
 	moving = true
-	if not attached_ants.is_empty():
-		controller = attached_ants[0].controller
-		nest_target = attached_ants[0].nest_position
+	for ant in attached_ants:
+		if is_instance_valid(ant):
+			ant.walking_animation()
+			if controller == null:
+				controller = ant.controller
+				nest_target = ant.nest_position
 
 func deliver():
 	if controller:
