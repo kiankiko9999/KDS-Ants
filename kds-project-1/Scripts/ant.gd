@@ -63,3 +63,5 @@ func die():
 	queue_free()
 func walking_animation():
 	animated_sprite.play("Walking")
+func idle_animation():
+	animated_sprite.play("Idle")
