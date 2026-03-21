@@ -4,13 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://yxws641bo8ma" path="res://Assets/Sprites/Blueberry.png" id="2_g86ho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usam7"]
-size = Vector2(24, 32)
+size = Vector2(20, 21)
 
 [node name="Area2D" type="Area2D" unique_id=584575149]
 collision_mask = 3
 script = ExtResource("1_vwcqu")
+attach_radius = 15.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1066962747]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_usam7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=58679826]

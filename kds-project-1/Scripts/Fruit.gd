@@ -53,6 +53,8 @@ func try_attach(ant) -> bool:
 	ant.moving = false
 	ant.attached_fruit = self
 	ant.set_collision_layer_value(1, false)
+	ant.set_collision_layer_value(2, false)
+	ant.set_collision_layer_value(3, false)
 	ant.set_collision_layer_value(4, true)
 	if weight <= 0:
 		_start_moving()

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dpeo4lp5lur0e"]
+
+[ext_resource type="FontFile" uid="uid://dybupmd1l8lot" path="res://Assets/fonts/PixelOperator8.ttf" id="1_lf2ic"]
+[ext_resource type="Script" uid="uid://q1cgj08ltmh2" path="res://Scripts/instructions.gd" id="1_oscdv"]
+
+[node name="Node2D" type="Node2D" unique_id=1359435645]
+script = ExtResource("1_oscdv")
+
+[node name="Label" type="Label" parent="." unique_id=497344659]
+offset_top = 4.0
+offset_right = 190.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("1_lf2ic")
+theme_override_font_sizes/font_size = 8
+text = "Left click to send out ants
+
+right click to bring them back!"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="." unique_id=594917333]
+offset_left = 300.0
+offset_top = 4.0
+offset_right = 483.0
+offset_bottom = 104.0
+theme_override_fonts/font = ExtResource("1_lf2ic")
+theme_override_font_sizes/font_size = 8
+text = "Bring back fruit to the colony to make more ants and gain points.
+
+Try not to get stomped!"
+autowrap_mode = 2

@@ -32,8 +32,9 @@ func move_to(pos: Vector2):
 	moving = true
 
 func return_to_nest():
-	if returning:
-		return
+	#if returning:
+		#print("I'm already returning")
+		#return
 	if attached_fruit != null:
 		attached_fruit.detach_ant(self)
 	set_collision_layer_value(1, false)
