@@ -12,6 +12,7 @@ shoeWarning = ExtResource("2_kx2cw")
 shoeAttack = ExtResource("3_goscw")
 blueberry = ExtResource("4_7la68")
 appleCore = ExtResource("5_k0qbb")
+linearTimeToDoubleDifficulty_InSeconds = 30.0
 
 [node name="Timer" type="Timer" parent="." unique_id=782326902]
 autostart = true

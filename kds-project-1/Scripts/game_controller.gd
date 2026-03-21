@@ -7,11 +7,17 @@ extends Node
 
 
 @export var gameOn = true
-@export var difficultyCoefficient = 1
+@export var linearTimeToDoubleDifficulty_InSeconds: float
+var difficultyCoefficient = 1
 @export var attackRate = 0.3
 @export var appleSpawnRate = 0.1
-@export var blueberrySpawnRate = 0.4
+@export var blueberrySpawnRate = 0.2
 
+@onready var spawnTimer = $Timer
+
+func _process(delta):
+	difficultyCoefficient += 1/linearTimeToDoubleDifficulty_InSeconds * delta  # Slowly ramps up over time
+	spawnTimer.wait_time = 1.0 / difficultyCoefficient
 
 	
 func _on_timer_timeout():
