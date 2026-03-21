@@ -28,10 +28,10 @@ position = Vector2(1, 36)
 shape = SubResource("CircleShape2D_4ksr6")
 
 [node name="Label" type="Label" parent="." unique_id=315904870]
-offset_left = 98.0
-offset_top = -153.0
-offset_right = 138.0
-offset_bottom = -130.0
+offset_left = -101.0
+offset_top = 42.0
+offset_right = -61.0
+offset_bottom = 65.0
 theme_override_fonts/font = ExtResource("5_fpjnh")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
