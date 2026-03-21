@@ -10,7 +10,7 @@ size = Vector2(24, 32)
 collision_mask = 3
 script = ExtResource("1_cvq6o")
 weight = 7
-ants_to_spawn = 4
+ants_to_spawn = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1066962747]
 shape = SubResource("RectangleShape2D_usam7")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dvdbj8xnek0m3"]
 
 [ext_resource type="Texture2D" uid="uid://chrmfvifa7sar" path="res://Assets/Sprites/Basicshoe.png" id="1_1cxow"]
-[ext_resource type="Script" uid="uid://dbfoogvjuelq8" path="res://scripts/shoe_attack.gd" id="1_1nogv"]
+[ext_resource type="Script" uid="uid://dbfoogvjuelq8" path="res://Scripts/shoe_attack.gd" id="1_1nogv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1nogv"]
 radius = 6.683033
@@ -13,11 +13,10 @@ collision_mask = 15
 script = ExtResource("1_1nogv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=973707181]
-position = Vector2(0, 2.3841858e-07)
+position = Vector2(7, 17)
 rotation = 1.298525
 scale = Vector2(1.105, 1.105)
 shape = SubResource("CapsuleShape2D_1nogv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=727535755]
-position = Vector2(-7, -17)
 texture = ExtResource("1_1cxow")

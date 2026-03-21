@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://dm8bsrwaa6eof"]
 
 [ext_resource type="Texture2D" uid="uid://dmjpybvyya63x" path="res://Assets/Sprites/Animations/Basicshoewarning.png" id="1_lg8rc"]
-[ext_resource type="Script" path="res://Scripts/ShoeWarning.tscn.gd" id="2_1qucn"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rguy1"]
-atlas = ExtResource("1_lg8rc")
-region = Rect2(96, 0, 96, 96)
+[ext_resource type="Script" uid="uid://dha5oukbuuy74" path="res://Scripts/ShoeWarning.tscn.gd" id="2_1qucn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mn532"]
 atlas = ExtResource("1_lg8rc")
@@ -19,9 +15,6 @@ region = Rect2(288, 0, 96, 96)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rguy1")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_mn532")
 }, {
 "duration": 1.0,
@@ -32,7 +25,7 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=926569429]
+[node name="ShoeWarning" type="AnimatedSprite2D" unique_id=926569429]
 position = Vector2(-7, -17)
 sprite_frames = SubResource("SpriteFrames_arpqv")
 animation = &"Shoe Warning"

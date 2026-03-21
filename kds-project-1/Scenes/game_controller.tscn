@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dke0id8kxi5ql"]
+
+[ext_resource type="Script" uid="uid://dgilk58tfb64g" path="res://Scripts/game_controller.gd" id="1_nqxm2"]
+[ext_resource type="PackedScene" uid="uid://dm8bsrwaa6eof" path="res://Scenes/ShoeWarning.tscn" id="2_kx2cw"]
+[ext_resource type="PackedScene" uid="uid://dvdbj8xnek0m3" path="res://Scenes/ShoeAttack.tscn" id="3_goscw"]
+
+[node name="Node2D" type="Node2D" unique_id=2005130439]
+script = ExtResource("1_nqxm2")
+shoeWarning = ExtResource("2_kx2cw")
+shoeAttack = ExtResource("3_goscw")
+
+[node name="Timer" type="Timer" parent="." unique_id=782326902]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

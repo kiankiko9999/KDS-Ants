@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bjix1gw2dbw4n" path="res://Scenes/Blueberry.tscn" id="4_yga4i"]
 [ext_resource type="PackedScene" uid="uid://dvdbj8xnek0m3" path="res://Scenes/ShoeAttack.tscn" id="5_4ksr6"]
 [ext_resource type="PackedScene" uid="uid://dm8bsrwaa6eof" path="res://Scenes/ShoeWarning.tscn" id="6_uc7fm"]
+[ext_resource type="PackedScene" uid="uid://dke0id8kxi5ql" path="res://Scenes/game_controller.tscn" id="7_56e3h"]
 
 [node name="Node2D" type="Node2D" unique_id=1471633050]
 position = Vector2(-1, 0)
@@ -33,3 +34,5 @@ position = Vector2(235, -97)
 
 [node name="AnimatedSprite2D" parent="." unique_id=926569429 instance=ExtResource("6_uc7fm")]
 position = Vector2(106, -114)
+
+[node name="Node2D" parent="." unique_id=2005130439 instance=ExtResource("7_56e3h")]
