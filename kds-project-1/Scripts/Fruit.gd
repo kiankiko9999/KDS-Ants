@@ -77,7 +77,9 @@ func _start_moving():
 
 
 func deliver():
+
 	if controller:
+		controller.points+=1
 		#print("Fruit delivered! Nest gained ", ants_to_spawn, " ants.")
 		controller.ants_in_nest += ants_to_spawn
 		remove_child(fruitPickupAudio)

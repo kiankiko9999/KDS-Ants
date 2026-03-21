@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://7w4faboarsdr" path="res://Scripts/area_2d.gd" id="3_mbg7k"]
 [ext_resource type="Texture2D" uid="uid://bprj5w4xm7d6t" path="res://Assets/Sprites/AntHill.png" id="4_tc12g"]
 [ext_resource type="FontFile" uid="uid://dybupmd1l8lot" path="res://Assets/fonts/PixelOperator8.ttf" id="5_fpjnh"]
+[ext_resource type="Script" uid="uid://dxc4e7ud6yvcm" path="res://Scripts/label.gd" id="6_mbg7k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ksr6"]
 radius = 31.016125
@@ -33,6 +34,9 @@ offset_top = -153.0
 offset_right = 138.0
 offset_bottom = -130.0
 theme_override_fonts/font = ExtResource("5_fpjnh")
+script = ExtResource("6_mbg7k")
+
+[node name="Timer" type="Timer" parent="Label" unique_id=1585459559]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

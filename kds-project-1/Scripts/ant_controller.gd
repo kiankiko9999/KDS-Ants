@@ -5,6 +5,8 @@ extends Node2D
 @export var recall_radius: float = 80.0  # Right-click recall range
 
 var ants_in_nest: int = 10  # Starting ants in the nest
+var points: int = 0
+
 
 func _ready():
 	
