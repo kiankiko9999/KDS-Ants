@@ -24,7 +24,7 @@ offset_right = 483.0
 offset_bottom = 104.0
 theme_override_fonts/font = ExtResource("1_lf2ic")
 theme_override_font_sizes/font_size = 8
-text = "Bring back fruit to the colony to make more ants and gain points.
+text = "Bring back fruit to the colony to grow more ants and gain points.
 
 Try not to get stomped!"
 autowrap_mode = 2
