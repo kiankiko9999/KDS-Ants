@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b72221n5063w" path="res://Scripts/Fruit.gd" id="1_cvq6o"]
 [ext_resource type="Texture2D" uid="uid://8lt21xenln1d" path="res://Assets/Sprites/Applecore.png" id="2_wkrbd"]
+[ext_resource type="AudioStream" uid="uid://qu6qoqulm3yo" path="res://Assets/Audio/collect2_ArcadeSoundFXPreviews_DanielJohnston.wav" id="3_wkrbd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usam7"]
 size = Vector2(24, 32)
@@ -17,5 +18,8 @@ shape = SubResource("RectangleShape2D_usam7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=58679826]
 texture = ExtResource("2_wkrbd")
+
+[node name="FruitPickupAudio" type="AudioStreamPlayer" parent="." unique_id=160591390]
+stream = ExtResource("3_wkrbd")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

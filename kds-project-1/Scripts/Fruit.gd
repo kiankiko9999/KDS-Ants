@@ -3,6 +3,9 @@ extends Area2D
 @export var weight: int = 3
 @export var ants_to_spawn: int = 2
 @export var attach_radius: float = 20.0
+
+@onready var fruitPickupAudio = $FruitPickupAudio
+
 var size
 var attached_ants: Array = []
 var moving: bool = false
@@ -75,8 +78,13 @@ func _start_moving():
 
 func deliver():
 	if controller:
+		#print("Fruit delivered! Nest gained ", ants_to_spawn, " ants.")
 		controller.ants_in_nest += ants_to_spawn
-		print("Fruit delivered! Nest gained ", ants_to_spawn, " ants.")
+		remove_child(fruitPickupAudio)
+		get_tree().root.add_child(fruitPickupAudio)
+		fruitPickupAudio.play()
+		# Auto free the audio player when it finishes
+		fruitPickupAudio.finished.connect(fruitPickupAudio.queue_free)
 	for ant in attached_ants:
 		if is_instance_valid(ant):
 			controller.ants_in_nest +=1

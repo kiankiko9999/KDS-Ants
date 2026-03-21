@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b72221n5063w" path="res://Scripts/Fruit.gd" id="1_vwcqu"]
 [ext_resource type="Texture2D" uid="uid://yxws641bo8ma" path="res://Assets/Sprites/Blueberry.png" id="2_g86ho"]
+[ext_resource type="AudioStream" uid="uid://qu6qoqulm3yo" path="res://Assets/Audio/collect2_ArcadeSoundFXPreviews_DanielJohnston.wav" id="3_g86ho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usam7"]
 size = Vector2(20, 21)
@@ -17,5 +18,8 @@ shape = SubResource("RectangleShape2D_usam7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=58679826]
 texture = ExtResource("2_g86ho")
+
+[node name="FruitPickupAudio" type="AudioStreamPlayer" parent="." unique_id=2002947716]
+stream = ExtResource("3_g86ho")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
