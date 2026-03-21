@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://18kywlp8asir"]
+
+[ext_resource type="Texture2D" uid="uid://duymmpngjc0gc" path="res://Assets/Sprites/Game Over.png" id="1_8fo1c"]
+[ext_resource type="Script" uid="uid://6y60xhp1e7tm" path="res://Scripts/Credits.gd" id="2_ek8ke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gryuy"]
+size = Vector2(220, 57)
+
+[node name="Game Over" type="Sprite2D" unique_id=954271052]
+texture = ExtResource("1_8fo1c")
+centered = false
+script = ExtResource("2_ek8ke")
+
+[node name="Back" type="Area2D" parent="." unique_id=937129690]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back" unique_id=1712713919]
+position = Vector2(232, 213.5)
+shape = SubResource("RectangleShape2D_gryuy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1076931798]
+position = Vector2(0, -256)
+offset = Vector2(0, 256)
+anchor_mode = 0
+zoom = Vector2(2.483, 2.532)
