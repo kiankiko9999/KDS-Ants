@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://cmnil1rvw8rti"]
 
 [ext_resource type="Texture2D" uid="uid://sg1q0p58k7wi" path="res://Assets/Sprites/Credits Screen.png" id="1_r18jl"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://Scripts/Credits.gd" id="2_gryuy"]
 [ext_resource type="PackedScene" path="res://Scenes/MainMenu.tscn" id="3_ccovl"]
+=======
+[ext_resource type="Script" uid="uid://6y60xhp1e7tm" path="res://Scripts/Credits.gd" id="2_gryuy"]
+[ext_resource type="FontFile" uid="uid://dybupmd1l8lot" path="res://Assets/fonts/PixelOperator8.ttf" id="3_ccovl"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gryuy"]
 size = Vector2(72, 30)
@@ -11,7 +16,6 @@ size = Vector2(72, 30)
 texture = ExtResource("1_r18jl")
 centered = false
 script = ExtResource("2_gryuy")
-main_menu = ExtResource("3_ccovl")
 
 [node name="Back" type="Area2D" parent="." unique_id=937129690]
 
@@ -24,3 +28,23 @@ position = Vector2(0, -256)
 offset = Vector2(0, 256)
 anchor_mode = 0
 zoom = Vector2(2.483, 2.532)
+
+[node name="Label" type="Label" parent="." unique_id=218171679]
+offset_left = 24.0
+offset_top = 64.0
+offset_right = 168.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+theme_override_fonts/font = ExtResource("3_ccovl")
+theme_override_font_sizes/font_size = 8
+text = "Kult of Keg:
+
+Code and in engine developers:
+
+Kian Saeed Tehrani
+Kevan Mok
+
+Art:
+
+Thomas Barbera"
+autowrap_mode = 2
