@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dybupmd1l8lot" path="res://Assets/fonts/PixelOperator8.ttf" id="3_ccovl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gryuy"]
-size = Vector2(72, 30)
+size = Vector2(220, 57)
 
 [node name="Credits" type="Sprite2D" unique_id=954271052]
 texture = ExtResource("1_r18jl")

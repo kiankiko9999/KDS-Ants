@@ -9,7 +9,7 @@ var points: int = 0
 
 
 func _ready():
-	
+	gameover()
 	print("Ants in nest: ", ants_in_nest)
 
 func _input(event: InputEvent):
@@ -47,7 +47,12 @@ func ant_returned():
 	ants_in_nest += 1
 	print("Ant returned! Ants in nest: ", ants_in_nest)
 
-
+func gameover():
+	await get_tree().create_timer(1.0).timeout
+	for ant in get_parent().get_children():
+		if ant.has_method("return_to_nest"):
+			gameover()
+		else:
+			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
-	
