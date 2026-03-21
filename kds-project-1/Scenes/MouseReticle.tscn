@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://csnionl4rdsj4"]
+
+[ext_resource type="Script" uid="uid://gv84asjcn5ab" path="res://Scripts/mouse_reticle.gd" id="1_p11kw"]
+[ext_resource type="Texture2D" uid="uid://cukq3g2l8lncr" path="res://Assets/Sprites/Reticle.png" id="2_c4i0n"]
+
+[node name="MouseReticle" type="Node2D" unique_id=1345839306]
+script = ExtResource("1_p11kw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=793337159]
+texture = ExtResource("2_c4i0n")

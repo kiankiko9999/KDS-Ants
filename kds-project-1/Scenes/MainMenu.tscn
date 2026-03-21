@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cbaenreei5q7n"]
 
 [ext_resource type="Texture2D" uid="uid://64w6r8eto8u6" path="res://Assets/Sprites/City Ants Main Menu.png" id="1_853f1"]
-[ext_resource type="Script" uid="uid://cik7jnua5y7vk" path="res://main_menu.gd" id="2_8saeu"]
+[ext_resource type="Script" path="res://main_menu.gd" id="2_8saeu"]
 [ext_resource type="PackedScene" uid="uid://drebd6j1to7yo" path="res://Scenes/BaseScene.tscn" id="3_8saeu"]
-[ext_resource type="PackedScene" uid="uid://cmnil1rvw8rti" path="res://Scenes/credits.tscn" id="4_ghw46"]
+[ext_resource type="PackedScene" path="res://Scenes/credits.tscn" id="4_ghw46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofydm"]
 size = Vector2(158, 54)

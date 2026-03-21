@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cmnil1rvw8rti"]
 
 [ext_resource type="Texture2D" uid="uid://sg1q0p58k7wi" path="res://Assets/Sprites/Credits Screen.png" id="1_r18jl"]
-[ext_resource type="Script" uid="uid://6y60xhp1e7tm" path="res://Scripts/Credits.gd" id="2_gryuy"]
-[ext_resource type="PackedScene" uid="uid://cbaenreei5q7n" path="res://Scenes/MainMenu.tscn" id="3_ccovl"]
+[ext_resource type="Script" path="res://Scripts/Credits.gd" id="2_gryuy"]
+[ext_resource type="PackedScene" path="res://Scenes/MainMenu.tscn" id="3_ccovl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gryuy"]
 size = Vector2(72, 30)
