@@ -7,6 +7,7 @@ extends Node2D
 var ants_in_nest: int = 10  # Starting ants in the nest
 
 func _ready():
+	
 	print("Ants in nest: ", ants_in_nest)
 
 func _input(event: InputEvent):
@@ -47,3 +48,4 @@ func ant_returned():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
+	
