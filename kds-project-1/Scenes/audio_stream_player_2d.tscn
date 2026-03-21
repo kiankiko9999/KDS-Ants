@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bl8dp8nd4c0n7"]
+
+[ext_resource type="AudioStream" uid="uid://co2qqloa6twqj" path="res://Assets/Audio/02. Lively City.mp3" id="1_kajln"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=1078375521]
+stream = ExtResource("1_kajln")
+autoplay = true
+bus = &"Music"

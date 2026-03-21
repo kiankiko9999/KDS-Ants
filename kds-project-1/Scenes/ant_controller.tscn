@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bns1ahqkmll3o" path="res://Scripts/ant_controller.gd" id="1_jgng7"]
 [ext_resource type="PackedScene" uid="uid://gr4yngnvfrpr" path="res://Scenes/ant.tscn" id="2_fpjnh"]
+[ext_resource type="PackedScene" uid="uid://fd8bk357wqf5" path="res://Scenes/game_over.tscn" id="2_mbg7k"]
 [ext_resource type="Script" uid="uid://7w4faboarsdr" path="res://Scripts/area_2d.gd" id="3_mbg7k"]
 [ext_resource type="Texture2D" uid="uid://bprj5w4xm7d6t" path="res://Assets/Sprites/AntHill.png" id="4_tc12g"]
 [ext_resource type="FontFile" uid="uid://dybupmd1l8lot" path="res://Assets/fonts/PixelOperator8.ttf" id="5_fpjnh"]
@@ -15,6 +16,7 @@ script = ExtResource("1_jgng7")
 ant_scene = ExtResource("2_fpjnh")
 nest_position = Vector2(232, -30)
 recall_radius = 50.0
+game_over = ExtResource("2_mbg7k")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1797619927]
 collision_mask = 7
@@ -29,10 +31,10 @@ position = Vector2(1, 36)
 shape = SubResource("CircleShape2D_4ksr6")
 
 [node name="Label" type="Label" parent="." unique_id=315904870]
-offset_left = -101.0
-offset_top = 42.0
-offset_right = -61.0
-offset_bottom = 65.0
+offset_left = -219.0
+offset_top = 27.0
+offset_right = -179.0
+offset_bottom = 50.0
 theme_override_fonts/font = ExtResource("5_fpjnh")
 script = ExtResource("6_mbg7k")
 

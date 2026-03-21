@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://drebd6j1to7yo"]
 
-[ext_resource type="Script" uid="uid://ta176fmat7qs" path="res://Scripts/base_scene.gd" id="1_eumj5"]
+[ext_resource type="Script" path="res://Scripts/base_scene.gd" id="1_eumj5"]
 [ext_resource type="TileSet" uid="uid://chd654wmf23aa" path="res://Assets/Tilemaps/RPG Urban Kit .tres" id="1_yga4i"]
 [ext_resource type="PackedScene" uid="uid://bqbu2wmib8ojy" path="res://Scenes/ant_controller.tscn" id="2_ufl4h"]
 [ext_resource type="PackedScene" uid="uid://cgvx8mcv84tpc" path="res://Scenes/Apple.tscn" id="3_58y5n"]
 [ext_resource type="PackedScene" uid="uid://bjix1gw2dbw4n" path="res://Scenes/Blueberry.tscn" id="4_yga4i"]
-[ext_resource type="PackedScene" path="res://Scenes/Instructions.tscn" id="6_56e3h"]
+[ext_resource type="PackedScene" uid="uid://dpeo4lp5lur0e" path="res://Scenes/Instructions.tscn" id="6_56e3h"]
 [ext_resource type="PackedScene" uid="uid://dke0id8kxi5ql" path="res://Scenes/game_controller.tscn" id="7_56e3h"]
 [ext_resource type="PackedScene" uid="uid://csnionl4rdsj4" path="res://Scenes/MouseReticle.tscn" id="8_sbiut"]
 

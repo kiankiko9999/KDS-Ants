@@ -13,10 +13,11 @@ var nest_target: Vector2 = Vector2.ZERO
 var controller = null
 
 func _ready():
-	despawn()
+	size = weight
 	attached_ants.resize(weight)
 	attached_ants.fill(null)
-	size = weight
+	call_deferred("despawn")
+
 
 func _on_body_entered(body):
 	if body.has_method("check_weight"):
@@ -100,7 +101,11 @@ func detach_ant(ant):
 	ant.attached_fruit = null
 
 func despawn():
+	if not is_inside_tree():
+		await tree_entered
 	await get_tree().create_timer(12.0).timeout
+	if not is_inside_tree():
+		return
 	if weight == size:
 		queue_free()
 	else:

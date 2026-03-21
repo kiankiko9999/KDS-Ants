@@ -3,7 +3,7 @@ extends Label
 @onready var timer = $Timer
 @onready var antController = get_parent()
 
-var time_left: float = 60.0  # Set your countdown time here
+var time_left: float = 120  # Set your countdown time here
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 		time_left = max(time_left, 0.0)  # Prevents going negative
 		update_label()
 	elif time_left == 0:
+		get_parent().gameover()
 		pass
 		
 func update_label():

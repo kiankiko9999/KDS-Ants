@@ -15,6 +15,15 @@ run/main_scene="uid://cbaenreei5q7n"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://csoulm6gxo1a1"
+
+[autoload]
+
+GameData="*uid://c10jqoj1xmy3o"
+AudioStreamPlayer2d="*uid://bl8dp8nd4c0n7"
+
 [dotnet]
 
 project/assembly_name="KDS Project 1"

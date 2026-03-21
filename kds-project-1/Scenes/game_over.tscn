@@ -1,7 +1,9 @@
-[gd_scene format=3 uid="uid://18kywlp8asir"]
+[gd_scene format=3 uid="uid://fd8bk357wqf5"]
 
 [ext_resource type="Texture2D" uid="uid://duymmpngjc0gc" path="res://Assets/Sprites/Game Over.png" id="1_8fo1c"]
 [ext_resource type="Script" uid="uid://6y60xhp1e7tm" path="res://Scripts/Credits.gd" id="2_ek8ke"]
+[ext_resource type="PackedScene" uid="uid://csnionl4rdsj4" path="res://Scenes/MouseReticle.tscn" id="3_ek8ke"]
+[ext_resource type="FontFile" uid="uid://dybupmd1l8lot" path="res://Assets/fonts/PixelOperator8.ttf" id="4_eoghk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gryuy"]
 size = Vector2(220, 57)
@@ -22,3 +24,15 @@ position = Vector2(0, -256)
 offset = Vector2(0, 256)
 anchor_mode = 0
 zoom = Vector2(2.483, 2.532)
+
+[node name="MouseReticle" parent="." unique_id=1345839306 instance=ExtResource("3_ek8ke")]
+
+[node name="PointsLabel" type="Label" parent="." unique_id=189904391]
+offset_left = 144.0
+offset_top = 123.0
+offset_right = 337.0
+offset_bottom = 177.0
+theme_override_colors/font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+theme_override_fonts/font = ExtResource("4_eoghk")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2

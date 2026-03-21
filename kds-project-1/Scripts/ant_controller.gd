@@ -3,15 +3,28 @@ extends Node2D
 @export var ant_scene: PackedScene
 @export var nest_position: Vector2 = Vector2(400, 300)  # Set this to your nest location
 @export var recall_radius: float = 80.0  # Right-click recall range
-
+@export var game_over: PackedScene
+@onready var timer = $Label/Timer
+var game_over_triggered = false
 var ants_in_nest: int = 10  # Starting ants in the nest
 var points: int = 0
 
+func _process(delta):
+	if not is_inside_tree():
+		return
+	if ants_in_nest <= 0 and _no_ants_outside():
+		gameover()
+	if timer.time_left < 0:
+		gameover()
+
+func _no_ants_outside() -> bool:
+	for ant in get_parent().get_children():
+		if ant.has_method("return_to_nest"):
+			return false
+	return true
 
 func _ready():
-	gameover()
 	print("Ants in nest: ", ants_in_nest)
-
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed:
 		var click_pos = get_global_mouse_position()
@@ -48,11 +61,12 @@ func ant_returned():
 	print("Ant returned! Ants in nest: ", ants_in_nest)
 
 func gameover():
-	await get_tree().create_timer(1.0).timeout
-	for ant in get_parent().get_children():
-		if ant.has_method("return_to_nest"):
-			gameover()
-		else:
-			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+	if game_over_triggered:
+		return
+	if not is_inside_tree():
+		return
+	game_over_triggered = true
+	GameData.points = points
+	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
