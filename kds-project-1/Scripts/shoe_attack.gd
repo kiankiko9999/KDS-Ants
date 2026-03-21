@@ -2,6 +2,8 @@ extends Area2D
 
 @export var drop_distance: float = 300.0
 @export var drop_speed: float = 600.0
+@onready var stompAudio = $StompAudio
+
 
 var start_position: Vector2
 var target_position: Vector2
@@ -28,6 +30,11 @@ func _physics_process(delta):
 		_land()
 
 func _land():
+	remove_child(stompAudio)
+	get_tree().root.add_child(stompAudio)
+	stompAudio.play()
+	# Auto free the audio player when it finishes
+	stompAudio.finished.connect(stompAudio.queue_free)
 	if has_hit:
 		return
 	has_hit = true
