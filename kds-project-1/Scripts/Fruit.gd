@@ -1,9 +1,9 @@
 extends Area2D
 
 @export var weight: int = 3
-@export var ants_to_spawn: int = 2
+@export var ants_to_spawn: int = 67
 @export var attach_radius: float = 20.0
-
+@export var radioactive: bool = false
 @onready var fruitPickupAudio = $FruitPickupAudio
 
 var size
@@ -79,10 +79,16 @@ func _start_moving():
 
 func deliver():
 
+		
 	if controller:
 		controller.points+=1
 		#print("Fruit delivered! Nest gained ", ants_to_spawn, " ants.")
 		controller.ants_in_nest += ants_to_spawn
+		
+		if radioactive == true:
+			controller.antLives += 1
+			
+
 		remove_child(fruitPickupAudio)
 		get_tree().root.add_child(fruitPickupAudio)
 		fruitPickupAudio.play()

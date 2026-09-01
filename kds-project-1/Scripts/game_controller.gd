@@ -55,3 +55,10 @@ func spawnBlueberry():
 	var rand_y = randf_range(-240, -112)
 	instanceBlueberry.position = Vector2(rand_x, rand_y)
 	add_child(instanceBlueberry)
+	
+#func spawnRadioactiveLiquid():
+	#var instanceRadioactiveLiquid = radioactiveLiquid.instantiate()
+	#var rand_x = randf_range(16, 448)
+	#var rand_y = randf_range(-240, -112)
+	#instanceRadioactiveLiquid.position = Vector2(rand_x, rand_y)
+	#add_child(instanceRadioactiveLiquid)

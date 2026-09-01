@@ -6,6 +6,8 @@ var speed: float = 120.0
 var target: Vector2 = Vector2.ZERO
 var returning: bool = false
 var moving: bool = false
+var lives: int
+
 @export var attached_fruit = null
 @onready var animated_sprite = $AnimatedSprite2D
 const ARRIVE_THRESHOLD = 8.0
@@ -59,10 +61,14 @@ func check_weight(fruit) -> bool:
 	return fruit.try_attach(self)
 
 func die():
-	if attached_fruit != null:
-		attached_fruit.detach_ant(self)
-	queue_free()
+	if lives <= 1:
+		if attached_fruit != null:
+			attached_fruit.detach_ant(self)
+		queue_free()
+	lives =- 1
+	
 func walking_animation():
 	animated_sprite.play("Walking")
+	
 func idle_animation():
 	animated_sprite.play("Idle")

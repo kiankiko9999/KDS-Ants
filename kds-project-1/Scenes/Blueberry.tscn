@@ -10,6 +10,7 @@ size = Vector2(20, 21)
 [node name="Area2D" type="Area2D" unique_id=584575149]
 collision_mask = 3
 script = ExtResource("1_vwcqu")
+ants_to_spawn = 2
 attach_radius = 15.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1066962747]

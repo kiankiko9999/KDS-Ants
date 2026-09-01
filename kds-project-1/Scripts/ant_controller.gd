@@ -5,9 +5,11 @@ extends Node2D
 @export var recall_radius: float = 80.0  # Right-click recall range
 @export var game_over: PackedScene
 @onready var timer = $Label/Timer
+
 var game_over_triggered = false
 var ants_in_nest: int = 10  # Starting ants in the nest
 var points: int = 0
+var antLives: int
 
 func _process(delta):
 	if not is_inside_tree():
@@ -25,6 +27,7 @@ func _no_ants_outside() -> bool:
 
 func _ready():
 	print("Ants in nest: ", ants_in_nest)
+	antLives = 1
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed:
 		var click_pos = get_global_mouse_position()
@@ -49,6 +52,7 @@ func _send_ant(target: Vector2):
 
 	ants_in_nest -= 1
 	print("Ant sent! Ants remaining in nest: ", ants_in_nest)
+	ant.lives = antLives
 
 func _recall_ants_near(click_pos: Vector2):
 	for ant in get_parent().get_children():
