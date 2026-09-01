@@ -23,5 +23,5 @@ func _process(delta: float) -> void:
 		pass
 		
 func update_label():
-	text = "Points: %d\nTime: %d" % [antController.points, time_left]
+	text = "Points: %d\nTime: %d\nNumber of ants: %d" % [antController.points, time_left, get_parent().ants_in_nest]
 	

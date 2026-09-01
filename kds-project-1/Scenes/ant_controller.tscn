@@ -36,6 +36,7 @@ offset_top = 27.0
 offset_right = -179.0
 offset_bottom = 50.0
 theme_override_fonts/font = ExtResource("5_fpjnh")
+theme_override_font_sizes/font_size = 8
 script = ExtResource("6_mbg7k")
 
 [node name="Timer" type="Timer" parent="Label" unique_id=1585459559]
