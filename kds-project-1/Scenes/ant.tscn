@@ -1,15 +1,11 @@
 [gd_scene format=3 uid="uid://gr4yngnvfrpr"]
 
 [ext_resource type="Script" uid="uid://cmwfobvymvdy8" path="res://Scripts/ant.gd" id="1_3vc7g"]
-[ext_resource type="Texture2D" uid="uid://d3jbeixi1h8wu" path="res://Assets/Sprites/Animations/Antimation.png" id="2_4ydk5"]
+[ext_resource type="Texture2D" uid="uid://dxixb2wah61l" path="res://Assets/Sprites/Animations/FullAntSpriteSheet.png" id="2_4ydk5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ydk5"]
 radius = 6.0
 height = 18.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ydk5"]
-atlas = ExtResource("2_4ydk5")
-region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fd48h"]
 atlas = ExtResource("2_4ydk5")
@@ -17,13 +13,29 @@ region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wtaqj"]
 atlas = ExtResource("2_4ydk5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yntpf"]
+atlas = ExtResource("2_4ydk5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ae3vd"]
+atlas = ExtResource("2_4ydk5")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3gn3"]
+atlas = ExtResource("2_4ydk5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00xey"]
+atlas = ExtResource("2_4ydk5")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_yntpf"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6dov"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4ydk5")
+"texture": SubResource("AtlasTexture_fd48h")
 }],
 "loop": true,
 "name": &"Idle",
@@ -31,10 +43,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fd48h")
+"texture": SubResource("AtlasTexture_wtaqj")
+}],
+"loop": true,
+"name": &"Radioactive Idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yntpf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wtaqj")
+"texture": SubResource("AtlasTexture_ae3vd")
+}],
+"loop": true,
+"name": &"Radioactive Walking",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3gn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00xey")
 }],
 "loop": true,
 "name": &"Walking",
@@ -49,5 +80,5 @@ script = ExtResource("1_3vc7g")
 shape = SubResource("CapsuleShape2D_4ydk5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2067209756]
-sprite_frames = SubResource("SpriteFrames_yntpf")
+sprite_frames = SubResource("SpriteFrames_f6dov")
 animation = &"Idle"

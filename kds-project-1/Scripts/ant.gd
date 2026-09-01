@@ -7,6 +7,7 @@ var target: Vector2 = Vector2.ZERO
 var returning: bool = false
 var moving: bool = false
 var lives: int
+var radioactive: bool = false
 
 @export var attached_fruit = null
 @onready var animated_sprite = $AnimatedSprite2D
@@ -15,9 +16,15 @@ const ARRIVE_THRESHOLD = 8.0
 func _physics_process(delta):
 	if not moving:
 		if attached_fruit == null:
-			animated_sprite.play("Idle")
+			if !radioactive:
+				animated_sprite.play("Idle")
+			else:
+				animated_sprite.play("Radioactive Idle")
 		return
-	animated_sprite.play("Walking")
+	if !radioactive:
+		animated_sprite.play("Walking")
+	else:
+		animated_sprite.play("Radioactive Walking")
 	var direction = (target - global_position)
 	if direction.length() < ARRIVE_THRESHOLD:
 		global_position = target
@@ -68,7 +75,13 @@ func die():
 	lives =- 1
 	
 func walking_animation():
-	animated_sprite.play("Walking")
-	
+	if !radioactive:
+		animated_sprite.play("Walking")
+	else:
+		animated_sprite.play("Radioactive Walking")
+
 func idle_animation():
-	animated_sprite.play("Idle")
+	if !radioactive:
+		animated_sprite.play("Idle")
+	else:
+		animated_sprite.play("Radioactive Idle")
