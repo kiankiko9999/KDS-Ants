@@ -42,14 +42,12 @@ func _send_ant(target: Vector2):
 	if ants_in_nest <= 0:
 		print("No ants left in nest!")
 		return
-
 	var ant = ant_scene.instantiate()
 	get_parent().add_child(ant)
 	ant.global_position = nest_position + Vector2(0,-50)
 	ant.nest_position = nest_position
 	ant.controller = self
 	ant.move_to(target)
-
 	ants_in_nest -= 1
 	print("Ant sent! Ants remaining in nest: ", ants_in_nest)
 	ant.lives = antLives

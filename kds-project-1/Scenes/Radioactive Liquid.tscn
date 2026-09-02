@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://qch6pvrr10sq"]
+[gd_scene format=3 uid="uid://hlle17lugwsm"]
 
-[node name="RadioactiveLiquid" type="Node2D" unique_id=262453559]
+[ext_resource type="Script" uid="uid://b72221n5063w" path="res://Scripts/Fruit.gd" id="1_rxdhp"]
+[ext_resource type="Texture2D" uid="uid://uowf1lagn45u" path="res://Assets/Sprites/Radioactivebottle.png" id="2_rxdhp"]
+[ext_resource type="AudioStream" uid="uid://qu6qoqulm3yo" path="res://Assets/Audio/collect2_ArcadeSoundFXPreviews_DanielJohnston.wav" id="3_njts8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v002n"]
+radius = 19.0
+
+[node name="Area2D" type="Area2D" unique_id=584575149]
+collision_mask = 3
+script = ExtResource("1_rxdhp")
+weight = 4
+ants_to_spawn = 0
+radioactive = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1066962747]
+shape = SubResource("CircleShape2D_v002n")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=58679826]
+texture = ExtResource("2_rxdhp")
+
+[node name="FruitPickupAudio" type="AudioStreamPlayer" parent="." unique_id=160591390]
+stream = ExtResource("3_njts8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

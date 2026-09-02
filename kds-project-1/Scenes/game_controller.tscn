@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dvdbj8xnek0m3" path="res://Scenes/ShoeAttack.tscn" id="3_goscw"]
 [ext_resource type="PackedScene" uid="uid://bjix1gw2dbw4n" path="res://Scenes/Blueberry.tscn" id="4_7la68"]
 [ext_resource type="PackedScene" uid="uid://cgvx8mcv84tpc" path="res://Scenes/Apple.tscn" id="5_k0qbb"]
+[ext_resource type="PackedScene" uid="uid://hlle17lugwsm" path="res://Scenes/Radioactive Liquid.tscn" id="6_k0qbb"]
 
 [node name="Node2D" type="Node2D" unique_id=2005130439]
 script = ExtResource("1_nqxm2")
@@ -12,6 +13,7 @@ shoeWarning = ExtResource("2_kx2cw")
 shoeAttack = ExtResource("3_goscw")
 blueberry = ExtResource("4_7la68")
 appleCore = ExtResource("5_k0qbb")
+radioactiveLiquid = ExtResource("6_k0qbb")
 linearTimeToDoubleDifficulty_InSeconds = 30.0
 
 [node name="Timer" type="Timer" parent="." unique_id=782326902]

@@ -7,7 +7,6 @@ var target: Vector2 = Vector2.ZERO
 var returning: bool = false
 var moving: bool = false
 var lives: int
-var radioactive: bool = false
 
 @export var attached_fruit = null
 @onready var animated_sprite = $AnimatedSprite2D
@@ -16,15 +15,9 @@ const ARRIVE_THRESHOLD = 8.0
 func _physics_process(delta):
 	if not moving:
 		if attached_fruit == null:
-			if !radioactive:
-				animated_sprite.play("Idle")
-			else:
-				animated_sprite.play("Radioactive Idle")
+			idle_animation()
 		return
-	if !radioactive:
-		animated_sprite.play("Walking")
-	else:
-		animated_sprite.play("Radioactive Walking")
+	walking_animation()
 	var direction = (target - global_position)
 	if direction.length() < ARRIVE_THRESHOLD:
 		global_position = target
@@ -50,6 +43,7 @@ func return_to_nest():
 	set_collision_layer_value(2, false)
 	set_collision_layer_value(3, true)
 	set_collision_layer_value(4, false)
+	set_collision_mask_value(1, false)
 	target = nest_position
 	returning = true
 	moving = true
@@ -64,7 +58,10 @@ func arrive_at_nest():
 func check_weight(fruit) -> bool:
 	if fruit.weight == 0:
 		return false
-	animated_sprite.play("Idle")
+	if lives == 1:
+		animated_sprite.play("Idle")
+	else:
+		animated_sprite.play("Radioactive Idle")
 	return fruit.try_attach(self)
 
 func die():
@@ -72,16 +69,18 @@ func die():
 		if attached_fruit != null:
 			attached_fruit.detach_ant(self)
 		queue_free()
-	lives =- 1
+	lives -= 1
+	print("I have ",lives, "left.")
+
 	
 func walking_animation():
-	if !radioactive:
+	if lives == 1:
 		animated_sprite.play("Walking")
 	else:
 		animated_sprite.play("Radioactive Walking")
 
 func idle_animation():
-	if !radioactive:
+	if lives == 1:
 		animated_sprite.play("Idle")
 	else:
 		animated_sprite.play("Radioactive Idle")

@@ -78,7 +78,6 @@ func _start_moving():
 
 
 func deliver():
-
 		
 	if controller:
 		controller.points+=1

@@ -5,4 +5,3 @@
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=1078375521]
 stream = ExtResource("1_kajln")
 autoplay = true
-bus = &"Music"
