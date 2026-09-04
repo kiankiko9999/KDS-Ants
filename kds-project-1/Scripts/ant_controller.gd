@@ -10,6 +10,8 @@ var game_over_triggered = false
 var ants_in_nest: int = 10  # Starting ants in the nest
 var points: int = 0
 var antLives: int
+var energyDrinkActive: bool = false
+var speedMultiplier = 1
 
 func _process(delta):
 	if not is_inside_tree():
@@ -51,6 +53,7 @@ func _send_ant(target: Vector2):
 	ants_in_nest -= 1
 	print("Ant sent! Ants remaining in nest: ", ants_in_nest)
 	ant.lives = antLives
+	ant.speedMultiplier = speedMultiplier
 
 func _recall_ants_near(click_pos: Vector2):
 	for ant in get_parent().get_children():

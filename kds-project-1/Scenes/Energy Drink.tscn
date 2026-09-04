@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://hs3h540jwxp2"]
+
+[ext_resource type="Script" uid="uid://b72221n5063w" path="res://Scripts/Fruit.gd" id="1_dv7gh"]
+[ext_resource type="Texture2D" uid="uid://b3uvpe5pm2a04" path="res://Assets/Sprites/ZBoost.png" id="1_wq1ss"]
+[ext_resource type="AudioStream" uid="uid://qu6qoqulm3yo" path="res://Assets/Audio/collect2_ArcadeSoundFXPreviews_DanielJohnston.wav" id="2_dv7gh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usam7"]
+size = Vector2(20, 33)
+
+[node name="Area2D" type="Area2D" unique_id=584575149]
+collision_mask = 3
+script = ExtResource("1_dv7gh")
+weight = 4
+ants_to_spawn = 0
+attach_radius = 15.0
+energyDrink = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1066962747]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_usam7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=58679826]
+texture = ExtResource("1_wq1ss")
+
+[node name="FruitPickupAudio" type="AudioStreamPlayer" parent="." unique_id=2002947716]
+stream = ExtResource("2_dv7gh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
