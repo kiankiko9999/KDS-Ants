@@ -4,10 +4,7 @@ extends Node2D
 @export var nest_position: Vector2 = Vector2(400, 300)  # Set this to your nest location
 @export var recall_radius: float = 80.0  # Right-click recall range
 @export var game_over: PackedScene
-<<<<<<< Updated upstream
 @onready var timer = $Label/Timer
-=======
->>>>>>> Stashed changes
 
 var game_over_triggered = false
 var ants_in_nest: int = 10  # Starting ants in the nest
@@ -31,10 +28,6 @@ func _no_ants_outside() -> bool:
 	return true
 
 func _ready():
-<<<<<<< Updated upstream
-=======
-	#gameover()
->>>>>>> Stashed changes
 	print("Ants in nest: ", ants_in_nest)
 	antLives = 1
 func _input(event: InputEvent):
@@ -72,7 +65,6 @@ func ant_returned():
 	ants_in_nest += 1
 	print("Ant returned! Ants in nest: ", ants_in_nest)
 
-<<<<<<< Updated upstream
 func gameover():
 	if game_over_triggered:
 		return
@@ -83,16 +75,3 @@ func gameover():
 	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
-=======
-#func gameover():
-	#await get_tree().create_timer(1.0).timeout
-	#if timer.time_left == 0:
-		#get_tree().change_scene_to_packed(game_over)
-	#for ant in get_parent().get_children():
-		#if ant.has_method("return_to_nest") and ants_in_nest == 0:
-			#gameover()
-		#else:
-			#get_tree().change_scene_to_packed(game_over)
-#func _on_area_2d_body_entered(body: Node2D) -> void:
-	#pass # Replace with function body.
->>>>>>> Stashed changes
