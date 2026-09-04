@@ -7,6 +7,7 @@ var target: Vector2 = Vector2.ZERO
 var returning: bool = false
 var moving: bool = false
 var lives: int
+var speedMultiplier: float = 1
 
 @export var attached_fruit = null
 @onready var animated_sprite = $AnimatedSprite2D
@@ -24,7 +25,7 @@ func _physics_process(delta):
 		moving = false
 		return
 
-	velocity = direction.normalized() * speed
+	velocity = direction.normalized() * speed * speedMultiplier
 	rotation = direction.normalized().angle() + PI / 2
 	move_and_slide()
 

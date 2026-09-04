@@ -4,7 +4,9 @@ extends Area2D
 @export var ants_to_spawn: int = 67
 @export var attach_radius: float = 20.0
 @export var radioactive: bool = false
+@export var energyDrink: bool = false
 @onready var fruitPickupAudio = $FruitPickupAudio
+@onready var speedMultiplier: float
 
 var size
 var attached_ants: Array = []
@@ -34,12 +36,18 @@ func _physics_process(delta):
 		deliver()
 		return
 	var velocity = direction.normalized() * 60.0
-	global_position += velocity * delta
+	
+	speedMultiplier = 0
+	
 	for ant in attached_ants:
 		if is_instance_valid(ant):
 			var slot = _get_slot_position(attached_ants.find(ant))
 			ant.global_position = slot
 			ant.rotation = (global_position - ant.global_position).angle() + PI / 2
+			speedMultiplier += ant.speedMultiplier
+	
+	speedMultiplier = speedMultiplier / attached_ants.size()
+	global_position += speedMultiplier * velocity * delta
 
 func try_attach(ant) -> bool:
 	if weight <= 0:
@@ -86,6 +94,9 @@ func deliver():
 		
 		if radioactive == true:
 			controller.antLives += 1
+			
+		if energyDrink == true:
+			controller.speedMultiplier += 0.1
 			
 
 		remove_child(fruitPickupAudio)
