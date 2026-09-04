@@ -1,9 +1,10 @@
 [gd_scene format=4 uid="uid://drebd6j1to7yo"]
 
-[ext_resource type="Script" path="res://Scripts/base_scene.gd" id="1_eumj5"]
+[ext_resource type="Script" uid="uid://ta176fmat7qs" path="res://Scripts/base_scene.gd" id="1_eumj5"]
 [ext_resource type="TileSet" uid="uid://chd654wmf23aa" path="res://Assets/Tilemaps/RPG Urban Kit .tres" id="1_yga4i"]
 [ext_resource type="PackedScene" uid="uid://bqbu2wmib8ojy" path="res://Scenes/ant_controller.tscn" id="2_ufl4h"]
-[ext_resource type="PackedScene" uid="uid://dpeo4lp5lur0e" path="res://Scenes/Instructions.tscn" id="6_56e3h"]
+[ext_resource type="PackedScene" uid="uid://hs3h540jwxp2" path="res://Scenes/Energy Drink.tscn" id="5_orcbb"]
+[ext_resource type="PackedScene" path="res://Scenes/Instructions.tscn" id="6_56e3h"]
 [ext_resource type="PackedScene" uid="uid://dke0id8kxi5ql" path="res://Scenes/game_controller.tscn" id="7_56e3h"]
 [ext_resource type="Texture2D" uid="uid://d3jbeixi1h8wu" path="res://Assets/Sprites/Animations/Antimation.png" id="7_eumj5"]
 [ext_resource type="PackedScene" uid="uid://dcpa1ri03l7kl" path="res://Scenes/Sluggy.tscn" id="8_eumj5"]
@@ -41,6 +42,7 @@ zoom = Vector2(2.483, 2.532)
 position = Vector2(232, -70)
 
 [node name="Node2D" parent="." unique_id=2005130439 instance=ExtResource("7_56e3h")]
+energyDrink = ExtResource("5_orcbb")
 
 [node name="Node2D2" parent="." unique_id=1359435645 instance=ExtResource("6_56e3h")]
 position = Vector2(4, -94)
