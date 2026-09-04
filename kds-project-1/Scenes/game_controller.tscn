@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cgvx8mcv84tpc" path="res://Scenes/Apple.tscn" id="5_k0qbb"]
 [ext_resource type="PackedScene" uid="uid://hlle17lugwsm" path="res://Scenes/Radioactive Liquid.tscn" id="6_k0qbb"]
 [ext_resource type="PackedScene" uid="uid://dcpa1ri03l7kl" path="res://Scenes/Sluggy.tscn" id="7_27abl"]
+[ext_resource type="PackedScene" uid="uid://cyxiew6gac4v6" path="res://Scenes/leaf.tscn" id="8_6nxga"]
 
 [node name="Node2D" type="Node2D" unique_id=2005130439]
 script = ExtResource("1_nqxm2")
@@ -16,6 +17,7 @@ blueberry = ExtResource("4_7la68")
 appleCore = ExtResource("5_k0qbb")
 radioactiveLiquid = ExtResource("6_k0qbb")
 sluggy = ExtResource("7_27abl")
+leaf = ExtResource("8_6nxga")
 linearTimeToDoubleDifficulty_InSeconds = 30.0
 
 [node name="Timer" type="Timer" parent="." unique_id=782326902]

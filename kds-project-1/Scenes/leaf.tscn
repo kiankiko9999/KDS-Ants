@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cyxiew6gac4v6"]
+
+[ext_resource type="Script" uid="uid://b72221n5063w" path="res://Scripts/Fruit.gd" id="1_1uw8j"]
+[ext_resource type="Texture2D" uid="uid://dnivpj6qded8o" path="res://Assets/Sprites/Leaf.png" id="2_k30ml"]
+[ext_resource type="AudioStream" uid="uid://qu6qoqulm3yo" path="res://Assets/Audio/collect2_ArcadeSoundFXPreviews_DanielJohnston.wav" id="3_k30ml"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_otkxt"]
+radius = 9.0
+
+[node name="Area2D" type="Area2D" unique_id=1214159361]
+script = ExtResource("1_1uw8j")
+weight = 1
+ants_to_spawn = 1
+attach_radius = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1619974191]
+texture = ExtResource("2_k30ml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2117613130]
+shape = SubResource("CircleShape2D_otkxt")
+
+[node name="FruitPickupAudio" type="AudioStreamPlayer" parent="." unique_id=2072463250]
+stream = ExtResource("3_k30ml")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
