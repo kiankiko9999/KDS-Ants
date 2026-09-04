@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dcpa1ri03l7kl"]
+
+[ext_resource type="Script" uid="uid://crpjegar5wrca" path="res://Scripts/sluggy.gd" id="1_kvd35"]
+[ext_resource type="Texture2D" uid="uid://ql6snmmvbiwm" path="res://Assets/Sprites/Animations/Sluggy.png" id="2_dt86j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys00j"]
+atlas = ExtResource("2_dt86j")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mfo6"]
+atlas = ExtResource("2_dt86j")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kghr7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys00j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mfo6")
+}],
+"loop": true,
+"name": &"Sliding",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1cas"]
+size = Vector2(17, 20)
+
+[node name="Area2D" type="Area2D" unique_id=2030329116]
+collision_mask = 15
+script = ExtResource("1_kvd35")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1274106336]
+sprite_frames = SubResource("SpriteFrames_kghr7")
+animation = &"Sliding"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1308297609]
+position = Vector2(14.5, 0)
+shape = SubResource("RectangleShape2D_f1cas")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

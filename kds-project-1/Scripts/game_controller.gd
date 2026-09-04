@@ -5,6 +5,7 @@ extends Node
 @export var blueberry: PackedScene
 @export var appleCore: PackedScene
 @export var radioactiveLiquid: PackedScene
+@export var sluggy: PackedScene
 
 
 @export var gameOn = true
@@ -14,6 +15,7 @@ var difficultyCoefficient = 1
 @export var appleSpawnRate = 0.1
 @export var blueberrySpawnRate = 0.2
 @export var radioactiveLiquidSpawnRate = 0.2
+@export var sluggySpawnRate = 0.1
 
 @onready var spawnTimer = $Timer
 
@@ -32,6 +34,8 @@ func _on_timer_timeout():
 		spawnBlueberry()
 	if gameOn and randf() < radioactiveLiquidSpawnRate:
 		spawnRadioactiveLiquid()
+	if gameOn and randf() < sluggySpawnRate:
+		spawnSluggy()
 
 func spawnShoe():
 	#print("It Works")
@@ -65,3 +69,9 @@ func spawnRadioactiveLiquid():
 	var rand_y = randf_range(-240, -112)
 	instanceRadioactiveLiquid.position = Vector2(rand_x, rand_y)
 	add_child(instanceRadioactiveLiquid)
+
+func spawnSluggy():
+	var instanceSluggy = sluggy.instantiate()
+	var rand_y = randf_range(-240, -112)
+	instanceSluggy.position = Vector2(0, rand_y)
+	add_child(instanceSluggy)

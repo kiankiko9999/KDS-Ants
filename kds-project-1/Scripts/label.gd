@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 		
 func update_label():
 	# text = "Points: %d\nTime: %d\nNumber of ants: %d" % [antController.points, time_left, get_parent().ants_in_nest]
-	text = "Points: %d\nNumber of ants: %d" % [antController.points, get_parent().ants_in_nest]
+	text = "Points: %d\n     : %d" % [antController.points, get_parent().ants_in_nest]
 	$TextureProgressBar.value = 100 * time_left/initial_time
 	
 

@@ -115,3 +115,7 @@ func despawn():
 		queue_free()
 	else:
 		despawn()
+
+func eaten():
+	print("Fruit has been eaten")
+	queue_free()

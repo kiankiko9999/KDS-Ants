@@ -1,11 +1,29 @@
 [gd_scene format=4 uid="uid://drebd6j1to7yo"]
 
-[ext_resource type="Script" uid="uid://ta176fmat7qs" path="res://Scripts/base_scene.gd" id="1_eumj5"]
+[ext_resource type="Script" path="res://Scripts/base_scene.gd" id="1_eumj5"]
 [ext_resource type="TileSet" uid="uid://chd654wmf23aa" path="res://Assets/Tilemaps/RPG Urban Kit .tres" id="1_yga4i"]
 [ext_resource type="PackedScene" uid="uid://bqbu2wmib8ojy" path="res://Scenes/ant_controller.tscn" id="2_ufl4h"]
-[ext_resource type="PackedScene" path="res://Scenes/Instructions.tscn" id="6_56e3h"]
+[ext_resource type="PackedScene" uid="uid://dpeo4lp5lur0e" path="res://Scenes/Instructions.tscn" id="6_56e3h"]
 [ext_resource type="PackedScene" uid="uid://dke0id8kxi5ql" path="res://Scenes/game_controller.tscn" id="7_56e3h"]
+[ext_resource type="Texture2D" uid="uid://d3jbeixi1h8wu" path="res://Assets/Sprites/Animations/Antimation.png" id="7_eumj5"]
+[ext_resource type="PackedScene" uid="uid://dcpa1ri03l7kl" path="res://Scenes/Sluggy.tscn" id="8_eumj5"]
 [ext_resource type="PackedScene" uid="uid://csnionl4rdsj4" path="res://Scenes/MouseReticle.tscn" id="8_sbiut"]
+[ext_resource type="PackedScene" uid="uid://cgvx8mcv84tpc" path="res://Scenes/Apple.tscn" id="9_sbiut"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbiut"]
+atlas = ExtResource("7_eumj5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_orcbb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbiut")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D2" type="Node2D" unique_id=1471633050]
 script = ExtResource("1_eumj5")
@@ -28,3 +46,14 @@ position = Vector2(232, -70)
 position = Vector2(4, -94)
 
 [node name="MouseReticle" parent="." unique_id=1345839306 instance=ExtResource("8_sbiut")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=940462319]
+position = Vector2(15, -28)
+rotation = 1.5707964
+sprite_frames = SubResource("SpriteFrames_orcbb")
+
+[node name="Area2D" parent="." unique_id=2030329116 instance=ExtResource("8_eumj5")]
+position = Vector2(61, -165)
+
+[node name="Area2D2" parent="." unique_id=584575149 instance=ExtResource("9_sbiut")]
+position = Vector2(135, -166)

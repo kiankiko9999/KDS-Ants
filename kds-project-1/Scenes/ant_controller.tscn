@@ -33,9 +33,9 @@ position = Vector2(1, 36)
 shape = SubResource("CircleShape2D_4ksr6")
 
 [node name="Label" type="Label" parent="." unique_id=315904870]
-offset_left = -219.0
+offset_left = -228.0
 offset_top = 27.0
-offset_right = -179.0
+offset_right = -188.0
 offset_bottom = 50.0
 theme_override_fonts/font = ExtResource("5_fpjnh")
 theme_override_font_sizes/font_size = 8
@@ -45,9 +45,9 @@ script = ExtResource("6_mbg7k")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Label" unique_id=1245168947]
 layout_mode = 0
-offset_left = -4.0
+offset_left = 5.0
 offset_top = -203.0
-offset_right = 36.0
+offset_right = 45.0
 offset_bottom = -163.0
 fill_mode = 5
 radial_center_offset = Vector2(-0.865, 0)
