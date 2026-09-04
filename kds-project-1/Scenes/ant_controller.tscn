@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqbu2wmib8ojy"]
 
 [ext_resource type="Script" uid="uid://bns1ahqkmll3o" path="res://Scripts/ant_controller.gd" id="1_jgng7"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://gr4yngnvfrpr" path="res://Scenes/ant.tscn" id="2_fpjnh"]
 [ext_resource type="PackedScene" uid="uid://fd8bk357wqf5" path="res://Scenes/game_over.tscn" id="2_mbg7k"]
 [ext_resource type="Script" uid="uid://7w4faboarsdr" path="res://Scripts/area_2d.gd" id="3_mbg7k"]
@@ -9,13 +10,18 @@
 [ext_resource type="Script" uid="uid://dxc4e7ud6yvcm" path="res://Scripts/label.gd" id="6_mbg7k"]
 [ext_resource type="Texture2D" uid="uid://bl1r0q602ddvp" path="res://Assets/Sprites/Timerred.png" id="8_6sj7r"]
 [ext_resource type="Texture2D" uid="uid://b5mu75gc4dslq" path="res://Assets/Sprites/Timergreen.png" id="9_aah63"]
+=======
+[ext_resource type="PackedScene" uid="uid://18kywlp8asir" path="res://Scenes/game_over.tscn" id="2_mbg7k"]
+[ext_resource type="Script" uid="uid://7w4faboarsdr" path="res://Scripts/area_2d.gd" id="3_mbg7k"]
+[ext_resource type="Texture2D" uid="uid://bprj5w4xm7d6t" path="res://Assets/Sprites/AntHill.png" id="4_tc12g"]
+>>>>>>> Stashed changes
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ksr6"]
 radius = 31.016125
 
 [node name="AntController" type="Node2D" unique_id=2059625535]
 script = ExtResource("1_jgng7")
-ant_scene = ExtResource("2_fpjnh")
+ant_scene = ExtResource("2_mbg7k")
 nest_position = Vector2(232, -30)
 recall_radius = 50.0
 game_over = ExtResource("2_mbg7k")
@@ -32,6 +38,7 @@ texture = ExtResource("4_tc12g")
 position = Vector2(1, 36)
 shape = SubResource("CircleShape2D_4ksr6")
 
+<<<<<<< Updated upstream
 [node name="Label" type="Label" parent="." unique_id=315904870]
 offset_left = -228.0
 offset_top = 27.0
@@ -54,6 +61,8 @@ radial_center_offset = Vector2(-0.865, 0)
 texture_under = ExtResource("8_6sj7r")
 texture_progress = ExtResource("9_aah63")
 
+=======
+>>>>>>> Stashed changes
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="timeout" from="Label/Timer" to="Label" method="_on_timer_timeout"]
