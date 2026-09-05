@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bis07ghl8manp"]
+
+[ext_resource type="Script" uid="uid://c2c75mh7pg5eh" path="res://Scripts/beetle.gd" id="1_ipb8m"]
+[ext_resource type="Texture2D" uid="uid://cj6v2my2pifpx" path="res://Assets/Sprites/Animations/Fatbeetle(animation).png" id="2_okpmu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t72gn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y2ou"]
+atlas = ExtResource("2_okpmu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75rrb"]
+atlas = ExtResource("2_okpmu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g410f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y2ou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75rrb")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=962095329]
+collision_layer = 0
+collision_mask = 15
+script = ExtResource("1_ipb8m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1632045782]
+position = Vector2(-11.63, 3.79)
+scale = Vector2(1.29, 1.29)
+shape = SubResource("RectangleShape2D_t72gn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1336653759]
+sprite_frames = SubResource("SpriteFrames_g410f")
+animation = &"Walking"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

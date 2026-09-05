@@ -30,6 +30,7 @@ func _physics_process(delta):
 		for ant in attached_ants:
 			if is_instance_valid(ant):
 				ant.idle_animation()
+		moving = false
 		return
 	var direction = (nest_target - global_position)
 	if direction.length() < 8.0:
@@ -129,4 +130,10 @@ func despawn():
 
 func eaten():
 	print("Fruit has been eaten")
+	for ant in attached_ants:
+		if ant != null:
+			var index = attached_ants.find(ant)
+			attached_ants[index].attached_fruit = null
+			attached_ants[index] = null
+
 	queue_free()

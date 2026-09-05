@@ -8,7 +8,7 @@ extends Node
 @export var energyDrink: PackedScene
 @export var sluggy: PackedScene
 @export var leaf: PackedScene
-
+@export var beetle: PackedScene
 
 @export var gameOn = true
 @export var linearTimeToDoubleDifficulty_InSeconds: float
@@ -17,9 +17,10 @@ var difficultyCoefficient = 1
 @export var appleSpawnRate = 0.1
 @export var blueberrySpawnRate = 0.2
 @export var radioactiveLiquidSpawnRate = 0.05
-@export var sluggySpawnRate = 0.1
+@export var sluggySpawnRate = 0.05
 @export var leafSpawnRate = .3
 @export var energyDrinkSpawnRate = 0.05
+@export var beetleSpawnRate = .03
 
 @onready var spawnTimer = $Timer
 
@@ -44,6 +45,8 @@ func _on_timer_timeout():
 		spawnLeaf()
 	if gameOn and randf() < energyDrinkSpawnRate:
 		spawnEnergyDrink()
+	if gameOn and randf() < beetleSpawnRate:
+		spawnBeetle()
 
 func spawnShoe():
 	#print("It Works")
@@ -97,3 +100,9 @@ func spawnLeaf():
 	var rand_y = randf_range(-240, -112)
 	instanceLeaf.position = Vector2(rand_x, rand_y)
 	add_child(instanceLeaf)
+
+func spawnBeetle():
+	var instanceBeetle = beetle.instantiate()
+	var rand_y = randf_range(-240, -112)
+	instanceBeetle.position = Vector2(500, rand_y)
+	add_child(instanceBeetle)
